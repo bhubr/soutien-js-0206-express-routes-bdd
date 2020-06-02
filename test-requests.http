@@ -1,0 +1,2 @@
+### Get all links
+GET http://localhost:5000/api/links/

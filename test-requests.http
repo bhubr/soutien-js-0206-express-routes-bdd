@@ -1,2 +1,14 @@
 ### Get all links
 GET http://localhost:5000/api/links/
+
+### Post a link (json)
+POST http://localhost:5000/api/links/
+Content-Type: application/json
+
+{"title":"React official site","url":"https://reactjs.org"}
+
+### Post a link (urlencoded)
+POST http://localhost:5000/api/links/
+Content-Type: application/x-www-form-urlencoded
+
+title=Express+official+site&url=https%3A%2F%2Fexpressjs.com

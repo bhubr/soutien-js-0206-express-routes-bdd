@@ -35,12 +35,17 @@ app.post('/api/links', (req, res) => {
       });
     }
 
-    // SELECT here
-
     const { insertId } = results;
-    // plutôt privilégier un nouveau SELECT
-    const insertedLink = { ...formData, id: insertId };
-    res.status(201).json(insertedLink);
+    // SELECT here
+    connection.query('SELECT * FROM link WHERE id = ?', [insertId], (err2, records) => {
+      if (err2) {
+        return res.status(500).json({
+          error: err2.message,
+          sql: err2.sql
+        });
+      }
+      res.status(201).json(records[0]);
+    });
   });
 });
 

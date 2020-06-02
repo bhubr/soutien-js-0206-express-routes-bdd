@@ -5,7 +5,7 @@ GET http://localhost:5000/api/links/
 POST http://localhost:5000/api/links/
 Content-Type: application/json
 
-{"title":"React official site","url":"https://reactjs.org"}
+{"title":"Node.js official site","url":"https://nodejs.org"}
 
 ### Post a link (urlencoded)
 POST http://localhost:5000/api/links/
